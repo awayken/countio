@@ -23,14 +23,16 @@ var countio = require('../lib/countio.js');
 */
 
 exports['countio'] = {
-  setUp: function(done) {
-    // setup here
+  setUp: function( done ) {
     done();
   },
-  'no args': function(test) {
-    test.expect(1);
-    // tests here
-    test.equal(countio.awesome(), 'awesome', 'should be awesome.');
+
+  'no args': function( test ) {
+    test.expect( 2 );
+    
+    test.equal( countio.awesome(), 'awesome', 'should be awesome.' );
+    test.ok( countio.characters > 0, 'should count some characters.' );
+
     test.done();
   }
 };

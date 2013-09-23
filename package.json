@@ -1,6 +1,6 @@
 {
   "name": "countio",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "lib/countio.js",
   "description": "Take all files passed in and determines count of characters, words, sections, chapters.",
   "homepage": "https://github.com/awayken/countio",
