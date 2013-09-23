@@ -1,0 +1,27 @@
+{
+  "name": "countio",
+  "version": "0.0.0",
+  "main": "lib/countio.js",
+  "description": "Take all files passed in and determines count of characters, words, sections, chapters.",
+  "homepage": "https://github.com/awayken/countio",
+  "bugs": "https://github.com/awayken/countio/issues",
+  "author": {
+    "name": "Miles Rausch",
+    "email": "miles@milesrausch.com",
+    "url": "http://milesrausch.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/awayken/countio"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-watch": "~0.5.0"
+  }
+}
