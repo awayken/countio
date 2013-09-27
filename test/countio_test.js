@@ -30,8 +30,39 @@ exports['countio'] = {
   'no args': function( test ) {
     test.expect( 2 );
     
-    test.equal( countio.awesome(), 'awesome', 'should be awesome.' );
-    test.ok( countio.characters > 0, 'should count some characters.' );
+    test.equal( countio.countFiles().characters, 0, 'No files passed in means no characters.' );
+    test.equal( countio.getCharacters(), 0, 'No file passed in means no characters.' );
+
+    test.done();
+  },
+
+  'individual count methods': function( test ) {
+    var testSentence = 'This is a test sentence.';
+
+    test.expect( 4 );
+    
+    test.equal( countio.getCharacters( testSentence ), 24, 'Our sentence should have 27 characters.' );
+    test.equal( countio.getWords( testSentence ), 5, 'Our sentence should have 5 words.' );
+    test.equal( countio.getSections( testSentence ), 1, 'Our sentence should have 1 section.' );
+    test.equal( countio.getChapters( testSentence ), 1, 'Our sentence should have 1 chapter.' );
+
+    test.done();
+  },
+
+  'one valid file': function( test ) {
+    
+
+    test.expect( 0 );
+    
+    //test.equal( countio.countFiles('test/test.txt'), 27, 'Our test file should have 27 characters.' );
+
+    test.done();
+  },
+
+  'one invalid file': function( test ) {
+    test.expect( 0 );
+    
+    //test.throws( countio.countFiles('fakefile.md'), 'ENOENT', 'Passing an invalid file throws an error.' );
 
     test.done();
   }
