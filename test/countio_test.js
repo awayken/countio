@@ -2,26 +2,6 @@
 
 var countio = require('../lib/countio.js');
 
-/*
-  ======== A Handy Little Nodeunit Reference ========
-  https://github.com/caolan/nodeunit
-
-  Test methods:
-    test.expect(numAssertions)
-    test.done()
-  Test assertions:
-    test.ok(value, [message])
-    test.equal(actual, expected, [message])
-    test.notEqual(actual, expected, [message])
-    test.deepEqual(actual, expected, [message])
-    test.notDeepEqual(actual, expected, [message])
-    test.strictEqual(actual, expected, [message])
-    test.notStrictEqual(actual, expected, [message])
-    test.throws(block, [error], [message])
-    test.doesNotThrow(block, [error], [message])
-    test.ifError(value)
-*/
-
 exports['countio'] = {
   setUp: function( done ) {
     done();
@@ -50,11 +30,14 @@ exports['countio'] = {
   },
 
   'one valid file': function( test ) {
-    
+    var testCount = countio.countFiles('test/test.txt');
 
-    test.expect( 0 );
+    test.expect( 4 );
     
-    //test.equal( countio.countFiles('test/test.txt'), 27, 'Our test file should have 27 characters.' );
+    test.equal( testCount.characters, 210, 'Our test file should have 210 characters.' );
+    test.equal( testCount.words, 42, 'Our test file should have 42 words.' );
+    test.equal( testCount.sections, 3, 'Our test file should have 3 sections.' );
+    test.equal( testCount.chapters, 2, 'Our test file should have 2 chapters.' );
 
     test.done();
   },
